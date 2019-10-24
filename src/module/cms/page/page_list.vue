@@ -35,6 +35,7 @@
         <template slot-scope="page">
           <el-button size="small" type="text" @click="edit(page.row.pageId)">编辑</el-button>
           <el-button size="small" type="text" @click="del(page.row.pageId)">删除</el-button>
+          <el-button size="small" type="text" @click="postPage(page.row.pageId)">发布</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -92,6 +93,9 @@
                         }
                     });
                 });
+            },
+            postPage:function (pageId) {
+              cmsApi.page_postPage();
             }
         },
         created() {
